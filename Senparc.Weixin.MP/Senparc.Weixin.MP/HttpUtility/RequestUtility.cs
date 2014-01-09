@@ -20,10 +20,6 @@ namespace Senparc.Weixin.MP.HttpUtility
         {
             WebClient wc = new WebClient();
             wc.Encoding = encoding ?? Encoding.UTF8;
-            //if (encoding != null)
-            //{
-            //    wc.Encoding = encoding;
-            //}
             return wc.DownloadString(url);
         }
 
@@ -52,7 +48,7 @@ namespace Senparc.Weixin.MP.HttpUtility
 
             using (Stream responseStream = response.GetResponseStream())
             {
-                using (StreamReader myStreamReader = new StreamReader(responseStream, encoding ?? Encoding.GetEncoding("utf-8")))
+                using (StreamReader myStreamReader = new StreamReader(responseStream, encoding ?? Encoding.UTF8))
                 {
                     string retString = myStreamReader.ReadToEnd();
                     return retString;
@@ -140,7 +136,7 @@ namespace Senparc.Weixin.MP.HttpUtility
 
             using (Stream responseStream = response.GetResponseStream())
             {
-                using (StreamReader myStreamReader = new StreamReader(responseStream, encoding ?? Encoding.GetEncoding("utf-8")))
+                using (StreamReader myStreamReader = new StreamReader(responseStream, encoding ?? Encoding.UTF8))
                 {
                     string retString = myStreamReader.ReadToEnd();
                     return retString;

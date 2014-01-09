@@ -82,9 +82,9 @@ namespace Senparc.Weixin.MP.AdvancedAPIs
             return CommonJsonSend.Send<OAuthAccessTokenResult>(null, url, null, CommonJsonSendType.GET);
         }
 
-        public static OAuthUserInfo GetUserInfo(string accessToken,string openId)
+        public static OAuthUserInfo GetUserInfo(string accessToken, string openId)
         {
-            var url = string.Format("https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}",accessToken,openId);
+            var url = string.Format("https://api.weixin.qq.com/sns/userinfo?access_token={0}&openid={1}", accessToken, openId);
             return CommonJsonSend.Send<OAuthUserInfo>(null, url, null, CommonJsonSendType.GET);
         }
     }

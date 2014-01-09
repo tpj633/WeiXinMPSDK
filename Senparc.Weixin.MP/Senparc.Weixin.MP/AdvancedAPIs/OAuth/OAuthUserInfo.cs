@@ -16,6 +16,13 @@ namespace Senparc.Weixin.MP.AdvancedAPIs
         /// 用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
         /// </summary>
         public int sex { get; set; }
+        public string sexStr
+        {
+            get
+            {
+                return sex == 1 ? "男" : "女";
+            }
+        }
         public string province { get; set; }
         public string city { get; set; }
         public string country { get; set; }
